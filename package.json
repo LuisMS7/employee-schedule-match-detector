@@ -1,0 +1,22 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "ioet task",
+  "main": "index.js",
+  "jest": {
+    "verbose": true
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "webpack && webpack-dev-server"
+  },
+  "author": "Luis Moyón",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "jest": "^27.4.0",
+    "webpack": "4.46.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
+}
