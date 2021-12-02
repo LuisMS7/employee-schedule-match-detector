@@ -24,7 +24,9 @@ class Model{
 		this.documentLines = text.split("\n")
 		this.employees = []
 		for(const line of this._documentLines){
-			this.employees.push(new Employee(line))
+            if(line !==""){
+                this.employees.push(new Employee(line))
+            }
 		}
 		this.getScheduleCoincidences()
 		handler()
