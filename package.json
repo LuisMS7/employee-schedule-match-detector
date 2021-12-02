@@ -4,19 +4,29 @@
   "description": "ioet task",
   "main": "index.js",
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest",
+      "\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --env=jsdom",
     "start": "webpack && webpack-dev-server"
   },
   "author": "Luis Moyón",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.2",
     "eslint": "^8.3.0",
     "jest": "^27.4.0",
     "webpack": "4.46.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "blob-polyfill": "^6.0.20211015"
   }
 }
