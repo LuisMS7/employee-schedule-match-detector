@@ -12,7 +12,6 @@ class Controller {
 
 	submitDocument(document){
 		this.model.getDocumentText(document, this.renderInformation.bind(this))
-      
 	}
 
 	renderInformation(){
