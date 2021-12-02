@@ -1,7 +1,7 @@
 class Employee {
 	constructor(employeeSchedule){
-		this.name = employeeSchedule.split("=")[0]
-		this.schedule = this.getScheduleDictionary(employeeSchedule.split("=")[1])
+		this.name = employeeSchedule.split("=")[0].trim()
+		this.getScheduleDictionary(employeeSchedule.split("=")[1])
 	}
 
 	getScheduleDictionary(scheduleString){
@@ -22,7 +22,7 @@ class Employee {
 				}]
 			}
 		}
-		return schedule
+		this.schedule =  schedule
 	}
 
 	getName(){
