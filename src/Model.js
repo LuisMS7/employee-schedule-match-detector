@@ -34,9 +34,9 @@ class Model{
 
 	getScheduleCoincidences() {
 		this.matches = []
-		for(let i=0; i < this._employees.length; i++){
-			for(let j=i+1; j < this._employees.length; j++){
-				this.matches.push(this._employees[i].compareEmployeesSchedule(this._employees[j]))
+		for(let employeePivotIndex=0; employeePivotIndex < this._employees.length; employeePivotIndex++){
+			for(let employeeToCompareIndex=employeePivotIndex+1; employeeToCompareIndex < this._employees.length; employeeToCompareIndex++){
+				this.matches.push(this._employees[employeePivotIndex].compareEmployeesSchedule(this._employees[employeeToCompareIndex]))
 			}
 		}
 	}
