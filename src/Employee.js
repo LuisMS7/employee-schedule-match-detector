@@ -25,27 +25,27 @@ class Employee {
 		this.schedule =  schedule
 	}
 
-	getName(){
+	get _name(){
 		return this.name
 	}
 
-	getSchedule(){
+	get _schedule() {
 		return this.schedule
 	}
 
 	compareEmployeesSchedule(employee){
-		const thisEmployeeScheduleKeys = Object.keys(this.getSchedule())
-		const employeeScheduleKeysSet = Object.keys(employee.getSchedule())
+		const thisEmployeeScheduleKeys = Object.keys(this._schedule)
+		const employeeScheduleKeysSet = Object.keys(employee._schedule)
 		const daysInCommon = thisEmployeeScheduleKeys.filter( day => employeeScheduleKeysSet.includes(day))
 		let matches = 0
 		for(const day of daysInCommon){
 			for(const hour of this.schedule[day]){
-				for(const otherHour of employee.getSchedule()[day]){
+				for(const otherHour of employee._schedule[day]){
 					matches += (((hour.start < otherHour.end) && (hour.start >= otherHour.start)) || ((otherHour.start < hour.end) && (otherHour.start >= hour.start))) ? 1 : 0 
 				}
 			}
 		}
-		return {employeesPair: `${this.name}-${employee.getName()}`, matches: matches}
+		return {employeesPair: `${this.name}-${employee._name}`, matches: matches}
 	}
 }
 
